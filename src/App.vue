@@ -217,7 +217,7 @@ export default {
   margin-top: 60px;
 }
 .wp__container{
-  max-width: 340px;
+  width: 340px;
   height: 100vh;
   overflow-y: auto;
   position: fixed;
