@@ -220,5 +220,8 @@ export default {
   max-width: 340px;
   height: 100vh;
   overflow-y: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 </style>
