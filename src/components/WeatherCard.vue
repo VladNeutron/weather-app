@@ -15,7 +15,7 @@
     <div class="wp-card-description">
         <div class="wp-card__wind">
             <img src="@/assets/images/home/Wind.png" alt="">
-            <span>{{weather.data.wind.speed}} m/s {{weather.data.wind.deg}} deg</span>
+            <span>{{weather.data.wind.speed}} m/s {{windAngle}}</span>
         </div>
         <div class="wp-card__preasure">
             <img src="@/assets/images/home/Pressure.png" alt="">
@@ -38,6 +38,35 @@
 export default {
     props: {
         weather: Object,
+    },
+    computed:{
+        windAngle(){
+            let degAngle = this.weather.data.wind.deg;
+            if(degAngle >= 337,5 && degAngle < 22,5){
+                return 'N'
+            }
+            else if(degAngle >= 22,5 && degAngle < 67,5){
+                return 'NE'
+            }
+            else if(degAngle >= 67,5 && degAngle < 112.5){
+                return 'E'
+            }
+            else if(degAngle >= 112.5 && degAngle < 157.5){
+                return 'SE'
+            }
+            else if(degAngle >= 157.5 && degAngle < 202.5){
+                return 'S'
+            }
+            else if(degAngle >= 202.5 && degAngle < 247.5){
+                return 'SW'
+            }
+            else if(degAngle >= 247.5 && degAngle < 292.5){
+                return 'W'
+            }
+            else if(degAngle >= 292.5 && degAngle < 337,5){
+                return 'NW'
+            }
+        }
     }
 }
 </script>
