@@ -2,7 +2,7 @@
     <div class="wp-settings-card tasks__item" draggable="true">
         <img class="burger-img" src="@/assets/images/home/Menu.png" alt="" draggable="false">
         <span>{{city.data.name}}, {{city.data.sys.country}}</span>
-        <img src="@/assets/images/home/Delete.png" alt="" @click="this.$emit('deleteCity', city.data.name)">
+        <img src="@/assets/images/home/Delete.png" alt="" @click="deleteCity(city.data.name)">
     </div>
 </template>
 
@@ -14,8 +14,10 @@ export default {
     emits:{
         deleteCity: null,
     },
-    mounted(){
-
+    methods: {
+        deleteCity(cityName){
+            this.$emit('deleteCity', cityName)
+        }
     },
 }
 </script>

@@ -2,7 +2,7 @@
   <div class="wp-setings">
     <div class="wp-setting-header">
         Settings
-        <img src="@/assets/images/home/Close.png" alt="" @click="this.$emit('changePage')">
+        <img src="@/assets/images/home/Close.png" alt="" @click="changePage">
     </div>
     <ul id="tasks__list">
         <weather-plank v-for="(city, ind) in cities" :key="city" :city="city" @deleteCity="deleteCitySettings" :id="'wplank'+ ind"></weather-plank>
@@ -58,7 +58,10 @@ export default {
         },
         deleteCitySettings(name){
             this.$emit('deleteCity', name)
-        }
+        },
+        changePage(){
+            this.$emit('changePage')
+        },
     },
     components: { WeatherPlank },
     mounted(){
@@ -118,14 +121,7 @@ export default {
             nextInd = Number(nextElement.id.match(/\d+/)[0]);
         }
 
-        
-
-        // console.log(activeInd);
-        // console.log(nextInd);
-
         this.$emit('changePosition', activeInd, nextInd, lastElement)
-        // Вставляем activeElement перед nextElement
-        // tasksListElement.insertBefore(activeElement, nextElement);
         });
     },
 }

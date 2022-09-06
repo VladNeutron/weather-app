@@ -4,7 +4,6 @@
         {{ weather.data.name }}, {{ weather.data.sys.country }}
     </div>
     <div class="wp-card-temperature">
-        <!-- <img src="@/assets/images/home/Sun.png" alt=""> -->
         <img :src="'http://openweathermap.org/img/wn/'+weather.data.weather[0].icon+'@2x.png'" alt="">
         <div>
             {{weather.data.main.temp}} °C
@@ -39,16 +38,6 @@
 export default {
     props: {
         weather: Object,
-        // city: String,
-        // country: String,
-        // temperature: Number,
-        // feelings: Number,
-        // wind: Number,
-        // windDirection: String,
-        // preasure: Number,
-        // humidity: Number,
-        // dew: Number,
-        // visability: Number,
     }
 }
 </script>
@@ -92,7 +81,6 @@ export default {
 
         div{
             margin-top: 20px;
-            // width: 50%;
         }
     }
 
